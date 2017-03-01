@@ -16,6 +16,9 @@ jobs:
             go get github.com/jstemmer/go-junit-report
             mkdir -p /tmp/test-results
       - run:
+          name: "Testing"
+          command: echo $NIGHTLY
+      - run:
           environment:
             DATABASE_URL: "postgres://ubuntu@localhost:5432/service_test?sslmode=disable"
           command: |
